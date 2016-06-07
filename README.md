@@ -39,9 +39,7 @@ To view only those ATMs that are listed for a particular city, open the followin
 ```http://localhost:8080/ListCityATM/listATMsByCity?city=CITY_NAME``` and then substitute the parameter value (CITY_NAME) with the actual city name e.g
 ```MAASTRICHT``` , ```AMSTERDAM``` , ```ROTTERDAM``` , ```EINDHOVEN``` , ```MIDDELBURG```, ```ZOETERMEER``` e.t.c
 
-To view the home page of this web application, open the following URL in a web browser:
-
-```http://localhost:8080/ListCityATM/```
+To view the home page of this web application, open the following URL in a web browser: ```http://localhost:8080/ListCityATM/```
 
 To run Unit tests in this project, execute the following:
 
