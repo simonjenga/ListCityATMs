@@ -4,8 +4,8 @@ List City ATMs
 This project is a Java Web application that exposes a REST/JSON web service. The exposed API from this Web application is used to create a list of ATMs
 in a given Dutch city.
 
-The Web application invokes an external service API from the URL: ```https://www.ing.nl/api/locator/atms/``` so as to gather a super set of the data.
-The data gathered is then processed by the Web application and returned as a well formed JSON Response.
+The Web application invokes an external service API from the URL: ```https://www.ing.nl/api/locator/atms/``` in order to gather a super set of the data.
+The gathered data is then processed by the Web application and returned as a well formed JSON Response.
 
 Building The Project
 ====================
