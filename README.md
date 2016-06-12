@@ -46,14 +46,14 @@ To view the home page of this web application, open the following URL in a web b
 
 `http://localhost:8080/ListCityATM/`
 
-and then enter the ```username``` and ```password``` credentials required in order to log in to the Web application.
+and then enter the required ```username``` and ```password``` credentials in order to log in to the Web application.
 
-To run Unit tests in this project, execute the following:
+To run Unit tests for this project, execute the following:
 
 ```mvn clean test```
 
 ### Instructions
 
-Eclipse users may run the command: `mvn eclipse:eclipse` and then import the whole project with it's source code as a Maven project into the Eclipse IDE.
+Eclipse users may run the command: `mvn eclipse:clean && mvn eclipse:eclipse` and then import the whole project with it's source code as a Maven project into the Eclipse IDE.
 
 To generate project documentation of Java source files (Javadoc), run: ```mvn javadoc:javadoc```
