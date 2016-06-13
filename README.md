@@ -46,6 +46,8 @@ To view the home page of this web application, open the following URL in a web b
 
 `http://localhost:8080/ListCityATM/`
 
+and then enter the ```username``` and ```password``` credentials required in order to log in to the Web application.
+
 To run Unit tests in this project, execute the following:
 
 ```mvn clean test```
