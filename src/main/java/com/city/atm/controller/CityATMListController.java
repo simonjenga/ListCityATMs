@@ -32,7 +32,8 @@ public class CityATMListController {
 
     @RequestMapping(value = "/homePage.htm", method = RequestMethod.GET)
     public ModelAndView getHomePage(ModelMap model, HttpServletRequest request) {
-        return new ModelAndView("/cityHomePageATM", "username", this.getPrincipal(request));
+        model.addAttribute("username", this.getPrincipal(request));
+        return new ModelAndView("/cityHomePageATM", model);
     }
 
     @RequestMapping(value = "/loginError.htm", method = RequestMethod.GET)
