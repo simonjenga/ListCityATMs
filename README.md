@@ -30,21 +30,21 @@ This project includes an embedded Tomcat and Jetty Server as a plug-in in the Ma
 
 This will create a distributable WAR file and deploy it in the respective embedded Tomcat or Jetty Server.
 
-To view all the ATMs that are listed by this web application, open the following URL in a web browser:
+- To view all the ATMs that are listed by this web application, open the following URL in a web browser:
 
-`http://localhost:8080/ListCityATM/listATMs`
+  `http://localhost:8080/ListCityATM/listATMs`
 
-To view only those ATMs that are listed for a particular city, open the following URL in a web browser:
+- To view only those ATMs that are listed for a particular city, open the following URL in a web browser:
 
-`http://localhost:8080/ListCityATM/listATMsByCity?city=CITY_NAME`
+  `http://localhost:8080/ListCityATM/listATMsByCity?city=CITY_NAME`
 
 and then substitute the parameter value (CITY_NAME) with the actual city name e.g 
 
-```MAASTRICHT``` , ```AMSTERDAM``` , ```ROTTERDAM``` , ```EINDHOVEN``` , ```MIDDELBURG```, ```ZOETERMEER``` e.t.c
+```MAASTRICHT``` , ```AMSTERDAM``` , ```ROTTERDAM``` , ```EINDHOVEN``` , ```MIDDELBURG```, ```ZOETERMEER```, ```SYDNEY```, ```BERLIN``` e.t.c
 
-To view the home page of this web application, open the following URL in a web browser:
+- To view the home page of this web application, open the following URL in a web browser:
 
-`http://localhost:8080/ListCityATM/`
+  `http://localhost:8080/ListCityATM/`
 
 and then enter the required ```username``` and ```password``` credentials in order to log in to the Web application.
 
