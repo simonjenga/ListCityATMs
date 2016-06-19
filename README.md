@@ -38,15 +38,15 @@ This will create a distributable WAR file and deploy it in the respective embedd
 
   `http://localhost:8080/ListCityATM/listATMsByCity?city=CITY_NAME`
 
-and then substitute the parameter value (CITY_NAME) with the actual city name e.g 
+  and then substitute the parameter value (CITY_NAME) with the actual city name e.g 
 
-```MAASTRICHT``` , ```AMSTERDAM``` , ```ROTTERDAM``` , ```EINDHOVEN``` , ```MIDDELBURG```, ```ZOETERMEER```, ```SYDNEY```, ```BERLIN``` e.t.c
+  ```MAASTRICHT``` , ```AMSTERDAM``` , ```ROTTERDAM``` , ```EINDHOVEN``` , ```MIDDELBURG```, ```ZOETERMEER```, ```SYDNEY```, ```BERLIN``` e.t.c
 
 - To view the home page of this web application, open the following URL in a web browser:
 
   `http://localhost:8080/ListCityATM/`
 
-and then enter the required ```username``` and ```password``` credentials in order to log in to the Web application.
+  and then enter the required ```username``` and ```password``` credentials in order to log in to the Web application.
 
 To run Unit tests for this project, execute the following:
 
