@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans
-    	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
         http://camel.apache.org/schema/spring
         http://camel.apache.org/schema/spring/camel-spring.xsd">
 
-	<camelContext id="camel" xmlns="http://camel.apache.org/schema/spring">
-		<package>com.company.restservice.configuration</package>
-	</camelContext>
+        <camelContext id="camel" xmlns="http://camel.apache.org/schema/spring">
+            <package>com.company.restservice.configuration</package>
+        </camelContext>
 
-	<bean id="myProcessor" class="com.company.restservice.configuration.MyProcessor">
+        <bean id="myProcessor" class="com.company.restservice.configuration.MyProcessor">
 
-	</bean>
+        </bean>
 </beans>
