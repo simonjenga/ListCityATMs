@@ -5,6 +5,14 @@
 
     <display-name>ListCityATMs</display-name>
 
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>
+            /WEB-INF/applicationContext.xml,
+            /WEB-INF/atm-security.xml
+        </param-value>
+    </context-param>
+
     <welcome-file-list>
         <welcome-file>jsp/index.jsp</welcome-file>
     </welcome-file-list>
