@@ -16,4 +16,13 @@
            http://www.springframework.org/schema/aop
            http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
 
+    <!-- Scan the controller's classpath for annotated components that will be auto-registered as 
+   	    Spring beans.Only the Spring-provided @Controller stereotypes will be detected.
+	 -->
+    <context:component-scan base-package="com.city.atm.controller" /> 
+
+    <!-- Helps get the annotation based mappings and validations by registering the 'HandlerMapping'
+        and 'HandlerAdapter' required to dispatch requests to your @Controller annotated classes.
+    -->
+    <mvc:annotation-driven />
 </beans>
