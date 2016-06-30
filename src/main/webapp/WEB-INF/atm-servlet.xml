@@ -31,4 +31,7 @@
         that is reachable via Spring’s Resource handling.
     -->
     <mvc:resources mapping="/static/**" location="/WEB-INF/static/"/>
+
+    <!-- This tag allows for mapping the DispatcherServlet to "/" -->
+    <mvc:default-servlet-handler />
 </beans>
