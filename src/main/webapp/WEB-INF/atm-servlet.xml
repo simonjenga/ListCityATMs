@@ -25,4 +25,10 @@
         and 'HandlerAdapter' required to dispatch requests to your @Controller annotated classes.
     -->
     <mvc:annotation-driven />
+
+    <!-- configures a handler for serving static resources such as "images", "js", and "css" files with cache
+        headers optimized for efficient loading in a web browser. Allows resources to be served out of any path
+        that is reachable via Spring’s Resource handling.
+    -->
+    <mvc:resources mapping="/static/**" location="/WEB-INF/static/"/>
 </beans>
