@@ -23,4 +23,6 @@
         By default, Spring-provided stereotypes: @Component, @Repository, @Service, and @Controller will be detected.
     -->
     <context:component-scan base-package="com.city.atm" annotation-config="true" />
+
+    <context:property-placeholder location="/WEB-INF/application.properties" />
 </beans>
