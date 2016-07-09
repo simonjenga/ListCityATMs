@@ -26,8 +26,23 @@
 
     <context:property-placeholder location="/WEB-INF/application.properties" />
 
-    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource" 
-        p:driverClassName="${jdbc.driverClassName}" p:url="${jdbc.url}" p:username="${jdbc.username}" 
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+        p:driverClassName="${jdbc.driverClassName}" p:url="${jdbc.url}" p:username="${jdbc.username}"
         p:password="${jdbc.password}">
+    </bean>
+
+    <!-- PERSISTENCE SUPPORT (JPA , Hibernate ,IBatis etc) -->
+    <bean id="jpaProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean"
+        p:location="/WEB-INF/application.properties" p:ignoreResourceNotFound="false">
+    </bean>
+
+    <!-- Define a bean named 'entityManagerFactory' that configures a test SessionFactory -->
+    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
+        p:dataSource-ref="dataSource" p:jpaProperties-ref="jpaProperties"
+        p:persistenceUnitName="ATMRestService" p:packagesToScan="com/city/**/model">
+        <property name="jpaVendorAdapter">
+            <!-- Implementation for Hibernate EntityManager -->
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />  
+        </property>
     </bean>
 </beans>
