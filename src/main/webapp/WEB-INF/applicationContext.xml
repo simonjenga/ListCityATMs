@@ -51,4 +51,9 @@
         p:entityManagerFactory-ref="entityManagerFactory" p:dataSource-ref="dataSource" />
 
     <tx:annotation-driven transaction-manager="transactionManager" />
+
+    <!-- Bean post-processor that automatically applies persistence exception translation to any
+        bean marked with Spring's {@code @Repository} annotation -->
+    <bean id="persistenceExceptionTranslationPostProcessor"
+        class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
 </beans>
