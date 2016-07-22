@@ -14,6 +14,22 @@
    		<center>
    			<span class="dark">${error}</span>
    			<h3 style="color: blue; font-size: 20px; font-weight: bold; font-family: Calibri, verdana, helvetica, sans-serif;">Login Required:</h3>
-		</center>
+			<form name='loginForm' action="<c:url value='login'/>" method='POST'>  
+				<table> 
+					<tr> 
+						<td>Username:</td> 
+						<td><input type='text' name='username' id="username" value=''></td> 
+					</tr> 
+					<tr> 
+						<td>Password:</td> 
+						<td><input type='password' name='password' id="password" /></td>
+					</tr> 
+					<tr>
+						<td></td>
+						<td><input name="submit" type="submit" value="Submit" /><input name="reset" type="reset" value="Reset" /></td> 
+					</tr>  
+				</table>   
+			</form>
+		 </center>
 	</body>
 </html>
