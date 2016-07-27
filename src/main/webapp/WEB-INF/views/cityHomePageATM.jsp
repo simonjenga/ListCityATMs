@@ -10,6 +10,10 @@
     </head>
     
     <body style="background-color: #D1D1E8">
-    	
+    	<div align='right'>
+    		<c:if test="${pageContext.request.userPrincipal.name != null}">
+	   			Welcome : ${pageContext.request.userPrincipal.name} | <a href="<c:url value="/logout.htm" />" >logout</a>
+			</c:if>
+		</div>
     </body>
 </html>
