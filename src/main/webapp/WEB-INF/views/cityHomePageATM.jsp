@@ -15,5 +15,8 @@
 	   			Welcome : ${pageContext.request.userPrincipal.name} | <a href="<c:url value="/logout.htm" />" >logout</a>
 			</c:if>
 		</div>
+        <center>        	
+        	<h1 style="color: blue; font-size: 40px; font-weight: bold; font-family: Calibri, verdana, helvetica, sans-serif;"><u>List City ATMs</u>.</h1>
+	    </center>
     </body>
 </html>
