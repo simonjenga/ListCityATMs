@@ -17,6 +17,11 @@
 		</div>
         <center>        	
         	<h1 style="color: blue; font-size: 40px; font-weight: bold; font-family: Calibri, verdana, helvetica, sans-serif;"><u>List City ATMs</u>.</h1>
-	    </center>
+	        <table align='center'>
+	            <tr align='center'>
+	            	<td>City Name: <input type="text" id="city"><br/></td>
+	            </tr>	            
+	        </table>
+        </center>
     </body>
 </html>
