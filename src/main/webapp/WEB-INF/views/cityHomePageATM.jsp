@@ -20,7 +20,17 @@
 	        <table align='center'>
 	            <tr align='center'>
 	            	<td>City Name: <input type="text" id="city"><br/></td>
-	            </tr>	            
+	            </tr>
+	            <tr align='center'>
+	            	<td>
+	            		<input type="button" value="Submit" onclick="atmFormSubmit.doAjaxPost();"><br/>
+	            	</td>
+	            </tr>
+	            <tr align='center'>
+	            	<td>
+	            		<div id="info" style="color: blue; font-size: 20px; font-weight: normal; font-family: Calibri, verdana, helvetica, sans-serif;"></div>
+	            	</td>
+	            </tr>
 	        </table>
         </center>
     </body>
