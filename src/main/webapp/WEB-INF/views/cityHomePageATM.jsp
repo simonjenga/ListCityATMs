@@ -32,6 +32,7 @@
 	            	</td>
 	            </tr>
 	        </table>
+	        <%@ include file="/WEB-INF/views/footer.jsp" %>
         </center>
     </body>
 </html>
