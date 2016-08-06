@@ -14,7 +14,25 @@ var atmFormSubmit = {
 		var city = $j('#city').val();
 		
 		$j.ajax({
-   			
+   			url : '/ListCityATM/listATMsByCity',
+   			data: "city=" + city,
+    		success : function(responseData) {
+    			// alert(responseData);
+        		// var jsonData = JSON.stringify(responseData, null, 4);
+        		// var objData = JSON.parse(jsonData);
+        		
+    			// $j('#info').html(jsonData); #E6E6FC
+        		
+        		var objContent = "";
+        		objContent += "<table border='border' cellspacing='0' cellpadding='5' width='100%' align='center'><thead><tr>";
+        		objContent += "<th>Street</th><th>Housenumber</th><th>Postalcode</th><th>City</th><th>Latitude</th><th>Longitude</th><th>Distance</th><th>Type</th>";
+        		objContent += "</tr></thead>";
+  				for(var i = 0; i < responseData.length; i++) {
+  					
+  				}
+  				objContent += "</table>";
+  				$j('#info').html(objContent);
+    		}
 		});
 	}
 }
