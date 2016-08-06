@@ -28,7 +28,16 @@ var atmFormSubmit = {
         		objContent += "<th>Street</th><th>Housenumber</th><th>Postalcode</th><th>City</th><th>Latitude</th><th>Longitude</th><th>Distance</th><th>Type</th>";
         		objContent += "</tr></thead>";
   				for(var i = 0; i < responseData.length; i++) {
-  					
+  					objContent += "<tr>";
+  					objContent += "<td width='100%' align='center'>"+responseData[i].address.street+"</td>";
+  					objContent += "<td width='100%' align='center'>"+responseData[i].address.housenumber+"</td>";
+  					objContent += "<td width='100%' align='center'>"+responseData[i].address.postalcode+"</td>";
+  					objContent += "<td width='100%' align='center'>"+responseData[i].address.city+"</td>";
+  					objContent += "<td width='100%' align='center'>"+responseData[i].address.geoLocation.lat+"</td>";
+  					objContent += "<td width='100%' align='center'>"+responseData[i].address.geoLocation.lng+"</td>";
+  					objContent += "<td width='100%' align='center'>"+responseData[i].distance+"</td>";
+  					objContent += "<td width='100%' align='center'>"+responseData[i].type+"</td>";
+  					objContent += "</tr>"; 	  					
   				}
   				objContent += "</table>";
   				$j('#info').html(objContent);
