@@ -33,4 +33,14 @@ import com.city.atm.model.ATM;
 @TestExecutionListeners(value = DependencyInjectionTestExecutionListener.class, inheritListeners = true)
 public class ATMControllerTest {
 
+    @Autowired
+    private ATMController atmController;
+
+    private MockMvc mockMvc;
+
+    @Before
+    public void setUp() throws Exception {
+        this.mockMvc = MockMvcBuilders.standaloneSetup(this.atmController).build();
+    }
+
 }
