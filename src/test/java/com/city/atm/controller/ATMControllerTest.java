@@ -43,4 +43,24 @@ public class ATMControllerTest {
         this.mockMvc = MockMvcBuilders.standaloneSetup(this.atmController).build();
     }
 
+    /**
+     * This test should testControllerInCityOne.
+     * 
+     * @throws Exception If something goes wrong
+     */
+    @Test
+    public void testControllerInCityOne() throws Exception {
+        this.mockMvc.perform(MockMvcRequestBuilders.get("/listATMsByCity?city=MAASTRICHT")
+            .contentType(MediaType.APPLICATION_JSON_UTF8).content("{ }"))
+            .andExpect(MockMvcResultMatchers.status().isOk())
+            .andExpect(MockMvcResultMatchers.content().contentType(MediaType.APPLICATION_JSON_UTF8));
+
+        ResponseEntity<List<ATM>> response = this.atmController.listATMsByCity("MAASTRICHT");
+
+        Assert.assertTrue(response != null && response.hasBody() && !response.getBody().isEmpty());
+
+        ATM atm = response.getBody().get(0);
+        Assert.assertEquals("ING", atm.getType());
+        Assert.assertEquals("MAASTRICHT", atm.getAddress().getCity());
+    }
 }
