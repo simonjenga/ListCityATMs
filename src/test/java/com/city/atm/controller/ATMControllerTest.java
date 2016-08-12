@@ -63,4 +63,46 @@ public class ATMControllerTest {
         Assert.assertEquals("ING", atm.getType());
         Assert.assertEquals("MAASTRICHT", atm.getAddress().getCity());
     }
+
+    /**
+     * This test should testControllerInCityTwo.
+     * 
+     * @throws Exception If something goes wrong
+     */
+    @Test
+    public void testControllerInCityTwo() throws Exception {
+        this.mockMvc.perform(MockMvcRequestBuilders.get("/listATMsByCity?city=AMSTERDAM")
+            .contentType("application/json;charset=UTF-8").content("{ }"))
+            .andExpect(MockMvcResultMatchers.status().isOk())
+            .andExpect(MockMvcResultMatchers.content().contentType("application/json;charset=UTF-8"));
+
+        ResponseEntity<List<ATM>> response = this.atmController.listATMsByCity("AMSTERDAM");
+
+        Assert.assertTrue(response != null && response.hasBody() && !response.getBody().isEmpty());
+
+        ATM atm = response.getBody().get(0);
+        Assert.assertTrue(atm.getType().equals("ING") && !atm.getType().equals("ALBERT_HEIJN"));
+        Assert.assertEquals("AMSTERDAM", atm.getAddress().getCity());
+    }
+
+    /**
+     * This test should testControllerInCityThree.
+     * 
+     * @throws Exception If something goes wrong
+     */
+    @Test
+    public void testControllerInCityThree() throws Exception {
+        this.mockMvc.perform(MockMvcRequestBuilders.get("/listATMsByCity?city=ROTTERDAM")
+            .contentType("application/json;charset=UTF-8").content("{ }"))
+            .andExpect(MockMvcResultMatchers.status().isOk())
+            .andExpect(MockMvcResultMatchers.content().contentType("application/json;charset=UTF-8"));
+
+        ResponseEntity<List<ATM>> response = this.atmController.listATMsByCity("ROTTERDAM");
+
+        Assert.assertTrue(response != null && response.hasBody() && !response.getBody().isEmpty());
+
+        ATM atm = response.getBody().get(0);
+        Assert.assertTrue(atm.getType().equals("ING") && !atm.getType().equals("ALBERT_HEIJN"));
+        Assert.assertEquals("ROTTERDAM", atm.getAddress().getCity());
+    }
 }
