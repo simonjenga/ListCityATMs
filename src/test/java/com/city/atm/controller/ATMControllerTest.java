@@ -126,4 +126,25 @@ public class ATMControllerTest {
         Assert.assertTrue(atm.getType().equals("ING") && !atm.getType().equals("ALBERT_HEIJN"));
         Assert.assertEquals("EINDHOVEN", atm.getAddress().getCity());
     }
+
+    /**
+     * This test should testControllerInCityFive.
+     * 
+     * @throws Exception If something goes wrong
+     */
+    @Test
+    public void testControllerInCityFive() throws Exception {
+        this.mockMvc.perform(MockMvcRequestBuilders.get("/listATMsByCity?city=MIDDELBURG")
+            .contentType("application/json;charset=UTF-8").content("{ }"))
+            .andExpect(MockMvcResultMatchers.status().isOk())
+            .andExpect(MockMvcResultMatchers.content().contentType("application/json;charset=UTF-8"));
+
+        ResponseEntity<List<ATM>> response = this.atmController.listATMsByCity("MIDDELBURG");
+
+        Assert.assertTrue(response != null && response.hasBody() && !response.getBody().isEmpty());
+        
+        ATM atm = response.getBody().get(0);
+        Assert.assertTrue(atm.getType().equals("ING") && !atm.getType().equals("ALBERT_HEIJN"));
+        Assert.assertEquals("MIDDELBURG", atm.getAddress().getCity());
+    }
 }
