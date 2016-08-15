@@ -147,4 +147,47 @@ public class ATMControllerTest {
         Assert.assertTrue(atm.getType().equals("ING") && !atm.getType().equals("ALBERT_HEIJN"));
         Assert.assertEquals("MIDDELBURG", atm.getAddress().getCity());
     }
+
+    /**
+     * This test should testControllerInCitySix.
+     * 
+     * @throws Exception If something goes wrong
+     */
+    @Test
+    public void testControllerInCitySix() throws Exception {
+        this.mockMvc.perform(MockMvcRequestBuilders.get("/listATMsByCity?city=ZOETERMEER")
+            .contentType(MediaType.APPLICATION_JSON_UTF8).content("{ }"))
+            .andExpect(MockMvcResultMatchers.status().isOk())
+            .andExpect(MockMvcResultMatchers.content().contentType(MediaType.APPLICATION_JSON_UTF8));
+
+        ResponseEntity<List<ATM>> response = this.atmController.listATMsByCity("ZOETERMEER");
+
+        Assert.assertTrue(response != null && response.hasBody() && !response.getBody().isEmpty());
+        
+        ATM atm = response.getBody().get(0);
+        Assert.assertEquals("ING", atm.getType());
+        Assert.assertEquals("ZOETERMEER", atm.getAddress().getCity());
+    }
+
+    /**
+     * This test should testControllerInCitySeven.
+     * 
+     * @throws Exception If something goes wrong
+     */
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void testControllerInCitySeven() throws Exception {
+        this.mockMvc.perform(MockMvcRequestBuilders.get("/listATMsByCity?city=Berlin")
+            .contentType("application/json;charset=UTF-8").content("{ }"))
+            .andExpect(MockMvcResultMatchers.status().isOk())
+            .andExpect(MockMvcResultMatchers.content().contentType("application/json;charset=UTF-8"));
+
+        ResponseEntity<List<ATM>> response = this.atmController.listATMsByCity("Berlin");
+
+        Assert.assertTrue(response != null && response.hasBody() && response.getBody().isEmpty());
+        
+        List<ATM> atmList = response.getBody();
+        Assert.assertTrue(atmList.size() == 0);
+        Assert.assertNull(atmList.get(0));        
+        Assert.assertFalse(atmList.get(0).getAddress().getCity().equals("Berlin"));
+    }
 }
