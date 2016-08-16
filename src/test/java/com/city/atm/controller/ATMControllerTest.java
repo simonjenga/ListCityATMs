@@ -190,4 +190,26 @@ public class ATMControllerTest {
         Assert.assertNull(atmList.get(0));        
         Assert.assertFalse(atmList.get(0).getAddress().getCity().equals("Berlin"));
     }
+
+    /**
+     * This test should testControllerInCityEight.
+     * 
+     * @throws Exception If something goes wrong
+     */
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void testControllerInCityEight() throws Exception {
+        this.mockMvc.perform(MockMvcRequestBuilders.get("/listATMsByCity?city=Sydney")
+            .contentType(MediaType.APPLICATION_JSON_UTF8).content("{ }"))
+            .andExpect(MockMvcResultMatchers.status().isOk())
+            .andExpect(MockMvcResultMatchers.content().contentType(MediaType.APPLICATION_JSON_UTF8));
+
+        ResponseEntity<List<ATM>> response = this.atmController.listATMsByCity("Sydney");
+
+        Assert.assertTrue(response != null && response.hasBody() && response.getBody().isEmpty());
+        
+        List<ATM> atmList = response.getBody();
+        Assert.assertTrue(atmList.size() == 0);
+        Assert.assertNull(atmList.get(0));        
+        Assert.assertFalse(atmList.get(0).getAddress().getCity().equals("Sydney"));
+    }
 }
