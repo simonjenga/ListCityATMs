@@ -212,4 +212,9 @@ public class ATMControllerTest {
         Assert.assertNull(atmList.get(0));        
         Assert.assertFalse(atmList.get(0).getAddress().getCity().equals("Sydney"));
     }
+
+    @After
+    public void tearDown() throws Exception {
+        // Intentionally empty!
+    }
 }
