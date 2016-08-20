@@ -16,4 +16,42 @@ public class GeoLocation {
 
     private String lng;
 
+    /**
+     * Public default constructor
+     */
+    public GeoLocation() {
+    }
+
+    /**
+     * @return the lat
+     */
+    public String getLat() {
+        return this.lat;
+    }
+
+    /**
+     * @param lat the lat to set
+     */
+    public void setLat(String lat) {
+        this.lat = lat;
+    }
+
+    /**
+     * @return the lng
+     */
+    public String getLng() {
+        return this.lng;
+    }
+
+    /**
+     * @param lng the lng to set
+     */
+    public void setLng(String lng) {
+        this.lng = lng;
+    }
+
+    @Override
+    public String toString() {
+        return "GeoLocation{" + "lat='" + this.lat + '\'' + ", lng=" + this.lng + '}';
+    }
 }
