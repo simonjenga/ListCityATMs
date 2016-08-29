@@ -17,5 +17,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Component
 public class ATMComponent extends RouteBuilder {
-	
+
+    @Override
+     public void configure() {
+        // set up a listener on the file component
+        super.from("file://target/test?noop=true").bean("myProcessor", "process");
+    }
 }
