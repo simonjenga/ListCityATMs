@@ -18,8 +18,22 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @Component
 public class ATMComponent extends RouteBuilder {
 
+    private static final String URL = "https://www.ing.nl/api/locator/atms/";
+
+    public List<ATM> listATMs() throws JsonParseException,
+            JsonMappingException, IOException {
+        RestTemplate restTemplate = new RestTemplate();
+        String response = restTemplate.getForObject(URL, String.class);
+        String toBeParsed = response.substring(6, response.length());
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        ATM[] atms = objectMapper.readValue(toBeParsed, ATM[].class);
+
+        return Arrays.asList(atms);
+    }
+
     @Override
-     public void configure() {
+    public void configure() {
         // set up a listener on the file component
         super.from("file://target/test?noop=true").bean("myProcessor", "process");
     }
