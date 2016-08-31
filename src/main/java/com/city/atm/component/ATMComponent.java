@@ -32,6 +32,30 @@ public class ATMComponent extends RouteBuilder {
         return Arrays.asList(atms);
     }
 
+    public List<ATM> listATMsByCity(String city) throws JsonParseException,
+            JsonMappingException, IOException {
+        RestTemplate restTemplate = new RestTemplate();
+
+        String response = restTemplate.getForObject(URL, String.class);
+        String toBeParsed = response.substring(6, response.length());
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        ATM[] atms = objectMapper.readValue(toBeParsed, ATM[].class);
+
+        List<ATM> atmsList = Arrays.asList(atms);
+        List<ATM> atmsByCityList = new LinkedList<ATM>();
+
+        for (ATM atm : atmsList) {
+            String theType = atm.getType(), theCity = atm.getAddress()
+                    .getCity();
+            if (theType.equals("ING") && theCity.equalsIgnoreCase(city)) {
+                atmsByCityList.add(atm);
+            }
+        }
+
+        return atmsByCityList;
+    }
+
     @Override
     public void configure() {
         // set up a listener on the file component
