@@ -14,4 +14,7 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 @Service
 public class ATMService {
 
+    @Autowired
+    private ATMComponent atmComponent;
+
 }
