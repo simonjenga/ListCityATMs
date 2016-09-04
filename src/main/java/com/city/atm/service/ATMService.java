@@ -22,4 +22,9 @@ public class ATMService {
         return this.atmComponent.listATMs();
     }
 
+    public List<ATM> listATMsByCity(String city) throws JsonParseException,
+            JsonMappingException, IOException {
+        return this.atmComponent.listATMsByCity(city);
+    }
+
 }
