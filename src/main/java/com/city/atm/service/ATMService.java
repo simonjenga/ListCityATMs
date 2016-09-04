@@ -17,4 +17,9 @@ public class ATMService {
     @Autowired
     private ATMComponent atmComponent;
 
+    public List<ATM> listATMs() throws JsonParseException,
+            JsonMappingException, IOException {
+        return this.atmComponent.listATMs();
+    }
+
 }
