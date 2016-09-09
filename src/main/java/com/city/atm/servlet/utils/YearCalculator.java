@@ -7,6 +7,19 @@ package com.city.atm.servlet.utils;
  * @author Simon Njenga
  * @since 0.1
  */
-public class YearCalculator {
+public class YearCalculator extends HttpServlet {
 
+    /**
+     * Serialization marker.
+     */
+    private static final long serialVersionUID = 5473151833849926992L;
+
+    public void doGet(HttpServletRequest req, HttpServletResponse res)
+        throws IOException, ServletException {
+
+    }
+
+    public void destroy() {
+        // Intentionally empty!
+    }
 }
