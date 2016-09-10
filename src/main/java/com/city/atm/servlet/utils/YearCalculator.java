@@ -17,6 +17,10 @@ public class YearCalculator extends HttpServlet {
     public void doGet(HttpServletRequest req, HttpServletResponse res)
         throws IOException, ServletException {
 
+        res.setContentType("text/html");
+        Calendar cal = Calendar.getInstance();
+        PrintWriter out = res.getWriter();
+        out.print(cal.get(Calendar.YEAR));
     }
 
     public void destroy() {
