@@ -16,6 +16,10 @@ import com.city.atm.service.ATMService;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 
+@RestController
 public class ATMController {
+
+    @Autowired
+    private ATMService atmService;
 
 }
