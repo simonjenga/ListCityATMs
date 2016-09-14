@@ -22,4 +22,13 @@ public class ATMController {
     @Autowired
     private ATMService atmService;
 
+    @RequestMapping(value = "/listATMs", method = RequestMethod.GET)
+    public ResponseEntity<List<ATM>> listATMs() throws JsonParseException,
+            JsonMappingException, IOException {
+
+        List<ATM> atmsList = this.atmService.listATMs();
+
+        return new ResponseEntity<List<ATM>>(atmsList, HttpStatus.OK);
+    }
+
 }
