@@ -31,4 +31,14 @@ public class ATMController {
         return new ResponseEntity<List<ATM>>(atmsList, HttpStatus.OK);
     }
 
+    @RequestMapping(value = "/listATMsByCity", method = RequestMethod.GET)
+    public ResponseEntity<List<ATM>> listATMsByCity(
+            @RequestParam(value = "city", required = true) String city)
+            throws JsonParseException, JsonMappingException, IOException {
+
+        List<ATM> atmsByCityList = this.atmService.listATMsByCity(city);
+
+        return new ResponseEntity<List<ATM>>(atmsByCityList, HttpStatus.OK);
+    }
+
 }
