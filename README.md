@@ -54,6 +54,6 @@ To run Unit tests for this project, execute the following:
 
 ### Instructions
 
-Eclipse users may run the command: `mvn eclipse:clean && mvn eclipse:eclipse` and then import the whole project with it's source code as a Maven project into the Eclipse IDE.
+Eclipse users may run the command: `mvn eclipse:clean eclipse:eclipse` and then import the whole project with it's source code as a Maven project into the Eclipse IDE.
 
 To generate project documentation of Java source files (Javadoc), run: ```mvn javadoc:javadoc```
