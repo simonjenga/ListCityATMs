@@ -18,6 +18,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @Component
 public class ATMComponent extends RouteBuilder {
 
+    // URL for the external service API
     private static final String URL = "https://www.ing.nl/api/locator/atms/";
 
     public List<ATM> listATMs() throws JsonParseException,
