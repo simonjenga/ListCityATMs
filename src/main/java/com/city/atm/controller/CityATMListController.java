@@ -18,4 +18,11 @@ import org.springframework.web.servlet.view.RedirectView;
 @Controller
 public class CityATMListController {
 
+    private String getPrincipal(HttpServletRequest request) {
+        Principal principal = request.getUserPrincipal();
+
+        // get and return the logged in username
+        return (principal != null ? principal.getName() : "ANONYMOUS");
+        // return (principal == null ? "ANONYMOUS" : principal.getName());
+    }
 }
