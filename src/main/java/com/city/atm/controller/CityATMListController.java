@@ -18,6 +18,11 @@ import org.springframework.web.servlet.view.RedirectView;
 @Controller
 public class CityATMListController {
 
+    @RequestMapping(value = "/loginPage.htm", method = RequestMethod.GET)
+    public ModelAndView login() {
+        return new ModelAndView("/login");
+    }
+
     private String getPrincipal(HttpServletRequest request) {
         Principal principal = request.getUserPrincipal();
 
