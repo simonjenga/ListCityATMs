@@ -23,6 +23,11 @@ public class CityATMListController {
         return new ModelAndView("/login");
     }
 
+    @RequestMapping(value = "/homePage.htm", method = RequestMethod.GET)
+    public ModelAndView getHomePage(ModelMap model, HttpServletRequest request) {
+        return new ModelAndView("/cityHomePageATM", "username", this.getPrincipal(request));
+    }
+
     private String getPrincipal(HttpServletRequest request) {
         Principal principal = request.getUserPrincipal();
 
