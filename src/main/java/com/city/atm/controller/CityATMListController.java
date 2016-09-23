@@ -28,6 +28,12 @@ public class CityATMListController {
         return new ModelAndView("/cityHomePageATM", "username", this.getPrincipal(request));
     }
 
+    @RequestMapping(value = "/loginError.htm", method = RequestMethod.GET)
+    public String loginError(ModelMap model) {
+        model.addAttribute("error", "Invalid username or password! Please try again.");
+        return "login";
+    }
+
     private String getPrincipal(HttpServletRequest request) {
         Principal principal = request.getUserPrincipal();
 
