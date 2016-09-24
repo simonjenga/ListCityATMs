@@ -34,6 +34,18 @@ public class CityATMListController {
         return "login";
     }
 
+    @RequestMapping(value = "/logout.htm", method = RequestMethod.GET)
+    public ModelAndView logout(HttpServletRequest request, HttpServletResponse response) {
+        request.getSession().invalidate();
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        if (auth != null) {
+            SecurityContextLogoutHandler logoutHandler = new SecurityContextLogoutHandler();
+            logoutHandler.logout(request, response, auth);
+        }
+        // return new ModelAndView("redirect:/loginPage.htm");
+        return new ModelAndView(new RedirectView("/loginPage.htm", true));
+    }
+
     private String getPrincipal(HttpServletRequest request) {
         Principal principal = request.getUserPrincipal();
 
