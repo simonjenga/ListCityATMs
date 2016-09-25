@@ -15,6 +15,12 @@ import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+/**
+ * Class description to be done later!
+ *
+ * @author Simon Njenga
+ * @since 0.1
+ */
 @Component
 public class ATMComponent extends RouteBuilder {
 

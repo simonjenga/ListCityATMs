@@ -15,6 +15,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
+/**
+ * Class description to be done later!
+ *
+ * @author Simon Njenga
+ * @since 0.1
+ */
 @Controller
 public class CityATMListController {
 
