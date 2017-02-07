@@ -12,8 +12,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <org.springframework-version>4.2.5.RELEASE</org.springframework-version>
-		<org.springsecurity-version>4.1.1.RELEASE</org.springsecurity-version>
-		<camel.version>2.17.0</camel.version>
+        <org.springsecurity-version>4.1.1.RELEASE</org.springsecurity-version>
+        <camel.version>2.17.0</camel.version>
         <java.version>1.7</java.version>
     </properties>
 
@@ -109,33 +109,33 @@
             <version>${org.springframework-version}</version>
         </dependency>
 		
-		<!-- Spring Security dependencies -->
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-core</artifactId>
-			<version>${org.springsecurity-version}</version>
-		</dependency>
-		
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-web</artifactId>
-			<version>${org.springsecurity-version}</version>
-		</dependency>
-		
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-taglibs</artifactId>
-			<version>${org.springsecurity-version}</version>
-		</dependency>
-		
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-config</artifactId>
-			<version>${org.springsecurity-version}</version>
-		</dependency>
+        <!-- Spring Security dependencies -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-core</artifactId>
+            <version>${org.springsecurity-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+            <version>${org.springsecurity-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-taglibs</artifactId>
+            <version>${org.springsecurity-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>${org.springsecurity-version}</version>
+        </dependency>
 		
 		<!-- Hibernate dependencies -->
-		<dependency>
+        <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
             <version>4.2.0.Final</version>
@@ -220,11 +220,11 @@
         <finalName>${project.artifactId}</finalName>
         <pluginManagement>
             <plugins>
-				<plugin>
+                <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-dependency-plugin</artifactId>
-					<version>2.10</version>
-					<configuration>
+                    <version>2.10</version>
+                    <configuration>
                         <fork>true</fork>
                         <encoding>UTF-8</encoding>
                     </configuration>
@@ -277,19 +277,19 @@
                     <!-- http://mvnrepository.com/artifact/org.apache.tomcat.maven/tomcat7-maven-plugin -->
                 </plugin>
                 <plugin>
-					<groupId>org.mortbay.jetty</groupId>
-					<artifactId>jetty-maven-plugin</artifactId>
-					<version>8.1.16.v20140903</version>
-					<configuration>
-						<war>${basedir}/target/${project.artifactId}.war</war>
-						<webAppConfig>
-							<allowDuplicateFragmentNames>true</allowDuplicateFragmentNames>
-							<contextPath>/${project.artifactId}</contextPath>
-							<descriptor>${basedir}/target/${project.artifactId}/WEB-INF/web.xml</descriptor>
-						</webAppConfig>
-					</configuration>
-					<!-- http://mvnrepository.com/artifact/org.mortbay.jetty/jetty-maven-plugin -->
-				</plugin>
+                    <groupId>org.mortbay.jetty</groupId>
+                    <artifactId>jetty-maven-plugin</artifactId>
+                    <version>8.1.16.v20140903</version>
+                    <configuration>
+                        <war>${basedir}/target/${project.artifactId}.war</war>
+                        <webAppConfig>
+                            <allowDuplicateFragmentNames>true</allowDuplicateFragmentNames>
+                            <contextPath>/${project.artifactId}</contextPath>
+                            <descriptor>${basedir}/target/${project.artifactId}/WEB-INF/web.xml</descriptor>
+                        </webAppConfig>
+                    </configuration>
+                    <!-- http://mvnrepository.com/artifact/org.mortbay.jetty/jetty-maven-plugin -->
+                </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-eclipse-plugin</artifactId>
