@@ -9,8 +9,8 @@
     <global-method-security pre-post-annotations="enabled" />
 
     <http auto-config="true" use-expressions="true">
-        <intercept-url pattern="/hello*" access="hasRole('ROLE_ADMIN')" />
-        <intercept-url pattern="/homePage*" access="hasRole('ROLE_ADMIN')" />
+        <intercept-url pattern="/loginPage*" access="permitAll" />
+        <intercept-url pattern="/homePage*" access="hasRole('ROLE_USER')" />
 
    	    <form-login login-page="/loginPage.htm" default-target-url="/homePage.htm" authentication-failure-url="/loginError.htm"
    	        username-parameter="username" password-parameter="password" />
@@ -22,7 +22,8 @@
     <authentication-manager>
         <authentication-provider>
             <user-service>
-                <user name="onelove" password="123456" authorities="ROLE_ADMIN" />
+                <user name="onelove" password="123456" authorities="ROLE_USER" />
+                <user name="felicity" password="123456" authorities="ROLE_USER" />
             </user-service>
         </authentication-provider>
     </authentication-manager>
