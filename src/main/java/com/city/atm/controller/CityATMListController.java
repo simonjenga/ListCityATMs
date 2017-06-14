@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
+import org.springframework.web.servlet.view.UrlBasedViewResolver;
 
 /**
  * Class description to be done later!
@@ -25,13 +26,14 @@ import org.springframework.web.servlet.view.RedirectView;
 public class CityATMListController {
 
     @RequestMapping(value = "/loginPage.htm", method = RequestMethod.GET)
-    public ModelAndView login() {
-        return new ModelAndView("/login");
+    public String login() {
+        return "login";
     }
 
     @RequestMapping(value = "/homePage.htm", method = RequestMethod.GET)
     public ModelAndView getHomePage(ModelMap model, HttpServletRequest request) {
-        return new ModelAndView("/cityHomePageATM", "username", this.getPrincipal(request));
+        model.addAttribute("username", this.getPrincipal(request));
+        return new ModelAndView("/cityHomePageATM", model);
     }
 
     @RequestMapping(value = "/loginError.htm", method = RequestMethod.GET)
@@ -42,13 +44,13 @@ public class CityATMListController {
 
     @RequestMapping(value = "/logout.htm", method = RequestMethod.GET)
     public ModelAndView logout(HttpServletRequest request, HttpServletResponse response) {
-        request.getSession().invalidate();
+        request.getSession(true).invalidate();
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         if (auth != null) {
             SecurityContextLogoutHandler logoutHandler = new SecurityContextLogoutHandler();
             logoutHandler.logout(request, response, auth);
         }
-        // return new ModelAndView("redirect:/loginPage.htm");
+        // return new ModelAndView(UrlBasedViewResolver.REDIRECT_URL_PREFIX + "/loginPage.htm");
         return new ModelAndView(new RedirectView("/loginPage.htm", true));
     }
 
