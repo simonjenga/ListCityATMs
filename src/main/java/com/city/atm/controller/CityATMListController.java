@@ -26,8 +26,8 @@ import org.springframework.web.servlet.view.UrlBasedViewResolver;
 public class CityATMListController {
 
     @RequestMapping(value = "/loginPage.htm", method = RequestMethod.GET)
-    public ModelAndView login() {
-        return new ModelAndView("/login");
+    public String login() {
+        return "login";
     }
 
     @RequestMapping(value = "/homePage.htm", method = RequestMethod.GET)
