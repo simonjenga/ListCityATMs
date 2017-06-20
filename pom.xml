@@ -133,8 +133,8 @@
             <artifactId>spring-security-config</artifactId>
             <version>${org.springsecurity-version}</version>
         </dependency>
-		
-		<!-- Hibernate dependencies -->
+        
+        <!-- Hibernate dependencies -->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
@@ -277,9 +277,9 @@
                     <!-- http://mvnrepository.com/artifact/org.apache.tomcat.maven/tomcat7-maven-plugin -->
                 </plugin>
                 <plugin>
-                    <groupId>org.mortbay.jetty</groupId>
+                    <groupId>org.eclipse.jetty</groupId>
                     <artifactId>jetty-maven-plugin</artifactId>
-                    <version>8.1.16.v20140903</version>
+                    <version>9.2.21.v20170120</version>
                     <configuration>
                         <war>${basedir}/target/${project.artifactId}.war</war>
                         <webAppConfig>
@@ -287,8 +287,12 @@
                             <contextPath>/${project.artifactId}</contextPath>
                             <descriptor>${basedir}/target/${project.artifactId}/WEB-INF/web.xml</descriptor>
                         </webAppConfig>
+                        <httpConnector>
+                            <port>8080</port>
+                        </httpConnector>
                     </configuration>
-                    <!-- http://mvnrepository.com/artifact/org.mortbay.jetty/jetty-maven-plugin -->
+                    <!-- Jetty version <= 9.2.x requires Java 7 while Jetty version >= 9.3.x requires Java 8. -->
+                    <!-- http://mvnrepository.com/artifact/org.eclipse.jetty/jetty-maven-plugin -->
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>

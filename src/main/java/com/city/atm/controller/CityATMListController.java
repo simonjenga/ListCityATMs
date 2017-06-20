@@ -25,13 +25,13 @@ import org.springframework.web.servlet.view.RedirectView;
 public class CityATMListController {
 
     @RequestMapping(value = "/loginPage.htm", method = RequestMethod.GET)
-    public ModelAndView login() {
-        return new ModelAndView("/login");
+    public String login() {
+        return "login";
     }
 
     @RequestMapping(value = "/homePage.htm", method = RequestMethod.GET)
     public ModelAndView getHomePage(ModelMap model, HttpServletRequest request) {
-        return new ModelAndView("/cityHomePageATM", "username", this.getPrincipal(request));
+        return new ModelAndView("cityHomePageATM", "username", this.getPrincipal(request));
     }
 
     @RequestMapping(value = "/loginError.htm", method = RequestMethod.GET)
