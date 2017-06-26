@@ -17,7 +17,7 @@ import com.fasterxml.jackson.databind.JsonMappingException;
  * @author Simon Njenga
  * @since 0.1
  */
-@Service
+@Service(value = "atmService")
 public class ATMService {
 
     @Autowired
