@@ -35,7 +35,7 @@ public class ATMComponent extends RouteBuilder {
     /**
      * Retrieves a list of all <code>ATM</code> objects from the <code>ATMComponent</code> class.
      * @throws JsonParseException If there is an error parsing the JSON response or the response is not a valid JSON
-     * @throws JsonMappingException If there is a problem in accessing suitable deserializer; including that of not finding any serializer
+     * @throws JsonMappingException If there is a problem in accessing a suitable serializer or deserializer
      * @throws IOException If there are some any other problems inside
      * @return a <code>List</code> of <code>ATM</code> objects
      */
@@ -55,7 +55,7 @@ public class ATMComponent extends RouteBuilder {
      * Retrieves a list of all <code>ATM</code> objects from the <code>ATMComponent</code> class.
      * @param city the city name to perform a look up of atm's machines
      * @throws JsonParseException If there is an error parsing the JSON response or the response is not a valid JSON
-     * @throws JsonMappingException If there is a problem in accessing suitable deserializer; including that of not finding any serializer
+     * @throws JsonMappingException If there is a problem in accessing a suitable serializer or deserializer
      * @throws IOException If there are some any other problems inside
      * @return a <code>List</code> of <code>ATM</code> objects
      */
