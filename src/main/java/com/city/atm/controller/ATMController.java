@@ -17,7 +17,8 @@ import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 
 /**
- * Class description to be done later!
+ * This is the {@code ATM} controller class that is used to process HTTP requests and responses
+ * as a RESTful service implementation from the class {@code ATMService}.
  *
  * @author Simon Njenga
  * @since 0.1
