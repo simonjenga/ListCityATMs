@@ -16,7 +16,12 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
 /**
- * Class description to be done later!
+ * This spring controller class renders and displays the login page of the application.
+ *
+ * Upon a successful login into the application, this class renders and displays the home
+ * page of the application; otherwise, a login error message is displayed on the login page.
+ *
+ * This class is also able to perform a successful logout after a successful login.
  *
  * @author Simon Njenga
  * @since 0.1
