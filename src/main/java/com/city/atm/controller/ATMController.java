@@ -18,8 +18,6 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 
 /**
  * Class description to be done later!
- * Class description to be done later!
- * Class description to be done later!
  *
  * @author Simon Njenga
  * @since 0.1
