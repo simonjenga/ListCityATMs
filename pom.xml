@@ -194,6 +194,7 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- Fasterxml jackson dependency -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-core</artifactId>
