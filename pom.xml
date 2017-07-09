@@ -165,6 +165,7 @@
             <version>1.0.0.Final</version>
         </dependency>
 
+        <!-- Java Servlet API Dependencies -->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
