@@ -133,7 +133,7 @@
             <artifactId>spring-security-config</artifactId>
             <version>${org.springsecurity-version}</version>
         </dependency>
-        
+
         <!-- Hibernate dependencies -->
         <dependency>
             <groupId>org.hibernate</groupId>
