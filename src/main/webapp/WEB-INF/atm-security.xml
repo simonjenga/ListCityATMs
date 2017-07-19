@@ -12,12 +12,12 @@
         <intercept-url pattern="/hello*" access="hasRole('ROLE_ADMIN')" />
         <intercept-url pattern="/homePage*" access="hasRole('ROLE_ADMIN')" />
 
-   	    <form-login login-page="/loginPage.htm" default-target-url="/homePage.htm" authentication-failure-url="/loginError.htm"
-   	        username-parameter="username" password-parameter="password" />
+        <form-login login-page="/loginPage.htm" default-target-url="/homePage.htm" authentication-failure-url="/loginError.htm"
+            username-parameter="username" password-parameter="password" />
 
         <csrf disabled="true" />
-   	    <logout invalidate-session="true" delete-cookies="JSESSIONID" logout-success-url="/" logout-url="/logout.htm" />
- 	</http>
+        <logout invalidate-session="true" delete-cookies="JSESSIONID" logout-success-url="/" logout-url="/logout.htm" />
+    </http>
 
     <authentication-manager>
         <authentication-provider>
