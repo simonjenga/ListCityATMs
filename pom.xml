@@ -327,6 +327,15 @@
     </build>
 
     <profiles>
-        <!-- Profile Tag -->
+        <profile>
+            <id>deploy-war</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <!-- To include deploy-war plugin -->
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
     </profiles>
 </project>
