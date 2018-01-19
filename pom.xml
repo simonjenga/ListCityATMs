@@ -337,5 +337,15 @@
                 </plugins>
             </build>
         </profile>
+        <profile>
+            <id>delete-war</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <!-- To include delete-war plugin -->
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
     </profiles>
 </project>
