@@ -139,25 +139,31 @@
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
-            <version>4.2.0.Final</version>
+            <version>4.3.2.Final</version>
         </dependency>
 
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
-            <version>4.2.0.Final</version>
+            <version>4.3.2.Final</version>
         </dependency>
 
         <dependency>
             <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-infinispan</artifactId>
-            <version>4.2.0.Final</version>
+            <artifactId>hibernate-validator</artifactId>
+            <version>4.3.2.Final</version>
         </dependency>
 
         <dependency>			
             <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-validator</artifactId>
-            <version>4.2.0.Final</version>		
+            <artifactId>hibernate-infinispan</artifactId>
+            <version>4.3.2.Final</version>		
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate.common</groupId>
+            <artifactId>hibernate-commons-annotations</artifactId>
+            <version>4.0.5.Final</version>
         </dependency>
 
         <dependency>
@@ -184,7 +190,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.18</version>
+            <version>5.1.40</version>
         </dependency>
 
         <!-- JUnit dependency -->
