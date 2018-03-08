@@ -325,4 +325,27 @@
             </plugins>
         </pluginManagement>
     </build>
+
+    <profiles>
+        <profile>
+            <id>deploy-war</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <!-- To include deploy-war plugin -->
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>delete-war</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <!-- To include delete-war plugin -->
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>
