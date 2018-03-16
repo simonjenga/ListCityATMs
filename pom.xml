@@ -341,6 +341,14 @@
                                 <configuration>
                                     <!-- mvn antrun:run -Pdeploy-war -->
                                     <encoding>${project.build.sourceEncoding}</encoding>
+                                    <target name="deploy.war.to.wildfly" description="deploying war file to wildfly server">
+                                        <echo>Deploying war file to wildfly...</echo>
+                                        <copy todir="${JBOSS_HOME}/standalone/deployments/" overwrite="true" flatten="true">
+                                            <fileset dir="${basedir}/target/">
+                                                <include name="${project.artifactId}.war" />
+                                            </fileset>
+                                        </copy>
+                                    </target>
                                 </configuration>
                                 <goals>
                                     <goal>run</goal>
