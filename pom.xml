@@ -364,7 +364,21 @@
             <build>
                 <plugins>
                     <plugin>
-                        <!-- To include delete-war plugin -->
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-antrun-plugin</artifactId>
+                        <version>1.8</version>
+                        <executions>
+                            <execution>
+                                <id>default-cli</id>
+                                <configuration>
+                                    <!-- mvn antrun:run -Pdelete-war -->
+                                    <encoding>${project.build.sourceEncoding}</encoding>
+                                </configuration>
+                                <goals>
+                                    <goal>run</goal>
+                                </goals>
+                            </execution>
+                        </executions>
                     </plugin>
                 </plugins>
             </build>
