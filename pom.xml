@@ -373,6 +373,24 @@
                                 <configuration>
                                     <!-- mvn antrun:run -Pdelete-war -->
                                     <encoding>${project.build.sourceEncoding}</encoding>
+                                    <target name="delete.war.from.wildfly" description="deleting war file from wildfly server">
+                                        <echo>Deleting war file from wildfly...</echo>
+                                        <delete includeEmptyDirs="true" verbose="true">
+                                            <fileset dir="${JBOSS_HOME}/standalone/deployments/">
+                                                <include name="**/*.war.dodeployed"/>
+                                                <include name="**/*.ear.dodeployed"/>
+                                                <include name="**/*.war.deployed"/>
+                                                <include name="**/*.ear.deployed"/>
+                                                <include name="**/*.war.failed"/>
+                                                <include name="**/*.ear.failed"/>
+                                                <include name="**/*.war"/>
+                                                <include name="**/*.ear"/>
+                                            </fileset>
+                                        </delete>
+                                        <delete dir="${JBOSS_HOME}/standalone/log" verbose="true" />
+                                        <delete dir="${JBOSS_HOME}/standalone/tmp" verbose="true" />
+                                        <delete dir="${JBOSS_HOME}/standalone/work" verbose="true" />
+                                    </target>
                                 </configuration>
                                 <goals>
                                     <goal>run</goal>
