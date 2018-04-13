@@ -361,6 +361,8 @@
             </build>
         </profile>
         <profile>
+            <!-- This "delete-war" profile is used for deleting this projects' war file from Wildfly Server >=8.0.0.Final
+                using this command: mvn clean antrun:run -Pdelete-war -->
             <id>delete-war</id>
             <build>
                 <plugins>
@@ -372,7 +374,6 @@
                             <execution>
                                 <id>default-cli</id>
                                 <configuration>
-                                    <!-- mvn antrun:run -Pdelete-war -->
                                     <encoding>${project.build.sourceEncoding}</encoding>
                                     <target name="delete.war.from.wildfly" description="deleting war file from wildfly server">
                                         <echo>Deleting war file from wildfly...</echo>
