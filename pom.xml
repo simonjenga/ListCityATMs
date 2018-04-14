@@ -328,7 +328,7 @@
 
     <profiles>
         <profile>
-            <!-- This "deploy-war" profile is used for copying this projects' war file to Wildfly Server >=8.0.0.Final
+            <!-- This "deploy-war" profile is used for copying this projects' war file to Wildfly Server >= 8.0.0.Final
                 using this command: mvn clean package antrun:run -Pdeploy-war -->
             <id>deploy-war</id>
             <build>
@@ -361,7 +361,7 @@
             </build>
         </profile>
         <profile>
-            <!-- This "delete-war" profile is used for deleting this projects' war file from Wildfly Server >=8.0.0.Final
+            <!-- This "delete-war" profile is used for deleting this projects' war file from Wildfly Server >= 8.0.0.Final
                 using this command: mvn clean antrun:run -Pdelete-war -->
             <id>delete-war</id>
             <build>
