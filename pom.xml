@@ -194,7 +194,7 @@
         </dependency>
 
         <!-- JUnit dependency -->
-        <dependency>	
+        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
@@ -253,6 +253,8 @@
                     <version>3.6.0</version>
                     <configuration>
                         <fork>true</fork>
+                        <source>${java.version}</source>
+                        <target>${java.version}</target>
                         <encoding>UTF-8</encoding>
                     </configuration>
                 </plugin>
