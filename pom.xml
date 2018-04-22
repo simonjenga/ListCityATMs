@@ -201,7 +201,7 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- Fasterxml jackson dependency -->
+        <!-- Fasterxml jackson dependencies -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-core</artifactId>
@@ -220,7 +220,7 @@
             <version>${fasterxml.jackson.version}</version>
         </dependency>
 
-        <!-- Apache camel dependency -->
+        <!-- Apache camel dependencies -->
         <dependency>
             <groupId>org.apache.camel</groupId>
             <artifactId>camel-core</artifactId>
