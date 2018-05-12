@@ -38,6 +38,7 @@
         <load-on-startup>1</load-on-startup>
     </servlet>
 
+    <!-- Processes application requests -->
     <servlet>
         <servlet-name>yearCalc</servlet-name>
         <servlet-class>com.city.atm.servlet.utils.YearCalculator</servlet-class>
