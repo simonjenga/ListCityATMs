@@ -54,6 +54,7 @@
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 
+    <!-- servlet-mapping for serving dynamic resources such as REST URL's and request mappings -->
     <servlet-mapping>
         <servlet-name>atm</servlet-name>
         <url-pattern>/restservice/*</url-pattern>
