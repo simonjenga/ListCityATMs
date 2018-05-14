@@ -49,6 +49,7 @@
         <url-pattern>*.htm</url-pattern>
     </servlet-mapping>
 
+    <!-- servlet-mapping for serving static resources such as "images", "js", and "css" files -->
     <servlet-mapping>
         <servlet-name>atm</servlet-name>
         <url-pattern>/</url-pattern>
