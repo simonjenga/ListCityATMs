@@ -44,6 +44,7 @@
         <servlet-class>com.city.atm.servlet.utils.YearCalculator</servlet-class>
     </servlet>
 
+    <!-- servlet-mapping for serving dynamic resources such as HTML and JSP pages and files -->
     <servlet-mapping>
         <servlet-name>atm</servlet-name>
         <url-pattern>*.htm</url-pattern>
