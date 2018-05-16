@@ -62,6 +62,7 @@
         <url-pattern>/restservice/*</url-pattern>
     </servlet-mapping>
 
+    <!-- servlet-mapping for serving dynamic resources such as the copyright year on page footers -->
     <servlet-mapping>
         <servlet-name>yearCalc</servlet-name>
         <url-pattern>/theYear</url-pattern>
