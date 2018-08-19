@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns="http://www.springframework.org/schema/beans"       
     xmlns:context="http://www.springframework.org/schema/context"
@@ -5,23 +6,21 @@
     xmlns:aop="http://www.springframework.org/schema/aop"
     xmlns:p="http://www.springframework.org/schema/p"       
     xsi:schemaLocation="http://www.springframework.org/schema/beans
-        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
-        http://www.springframework.org/schema/context/spring-context-4.0.xsd
+        http://www.springframework.org/schema/context/spring-context.xsd
         http://www.springframework.org/schema/tx
-        http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+        http://www.springframework.org/schema/tx/spring-tx.xsd
         http://www.springframework.org/schema/aop
-        http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
 
     <!-- Activates various annotations to be detected in bean classes: Spring's @Required and @Autowired,
         as well as JSR 250's @PostConstruct, @PreDestroy and @Resource (if available)
-        and JPA's @PersistenceContext and @PersistenceUnit (if available).
-    -->
+        and JPA's @PersistenceContext and @PersistenceUnit (if available). -->
     <context:annotation-config />
 
-    <!-- Scan the classpath for annotated components that will be auto-registered as Spring beans.
-        By default, Spring-provided stereotypes: @Component, @Repository, @Service, and @Controller will be detected.
-    -->
+    <!-- Scan the classpath for annotated components that will be auto-registered as Spring beans. By default,
+        Spring-provided stereotypes: @Component, @Repository, @Service, and @Controller will be detected. -->
     <context:component-scan base-package="com.city.atm" annotation-config="true" />
 
     <context:property-placeholder location="/WEB-INF/application.properties" />
@@ -56,4 +55,5 @@
         bean marked with Spring's {@code @Repository} annotation -->
     <bean id="persistenceExceptionTranslationPostProcessor"
         class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
+
 </beans>
