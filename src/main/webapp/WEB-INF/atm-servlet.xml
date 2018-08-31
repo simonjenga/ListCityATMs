@@ -16,29 +16,27 @@
         http://www.springframework.org/schema/aop
         http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
 
-    <!-- Scan the controller's classpath for annotated components that will be auto-registered as 
-   	    Spring beans.Only the Spring-provided @Controller stereotypes will be detected.
-	 -->
-    <context:component-scan base-package="com.city.atm.controller" /> 
+    <!-- Scan the controller's classpath for annotated components that will be auto-registered as
+   	    Spring beans. Only the Spring-provided @Controller stereotypes will be detected. -->
+    <context:component-scan base-package="com.city.atm.controller" />
 
     <!-- Helps get the annotation based mappings and validations by registering the 'HandlerMapping'
-        and 'HandlerAdapter' required to dispatch requests to your @Controller annotated classes.
-    -->
+        and 'HandlerAdapter' required to dispatch requests to your @Controller annotated classes. -->
     <mvc:annotation-driven />
 
     <!-- configures a handler for serving static resources such as "images", "js", and "css" files with cache
         headers optimized for efficient loading in a web browser. Allows resources to be served out of any path
-        that is reachable via Spring’s Resource handling.
-    -->
-    <mvc:resources mapping="/static/**" location="/WEB-INF/static/"/>
+        that is reachable via Spring’s Resource handling. -->
+    <mvc:resources mapping="/static/**" location="/WEB-INF/static/" />
 
     <!-- This tag allows for mapping the DispatcherServlet to "/" -->
     <mvc:default-servlet-handler />
 
     <!-- Exception Resolver that resolves exceptions through @ExceptionHandler methods -->
-    <bean class="org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver"/>
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver" />
 
-    <!--ViewResolver-->
+    <!-- ViewResolver -->
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"
         p:viewClass="org.springframework.web.servlet.view.JstlView" p:prefix="/WEB-INF/views/" p:suffix=".jsp" />
+
 </beans>
