@@ -14,19 +14,17 @@
         http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
 
     <!-- Activates various annotations to be detected in bean classes: Spring's @Required and @Autowired,
-        as well as JSR 250's @PostConstruct, @PreDestroy and @Resource (if available) 
-        and JPA's @PersistenceContext and @PersistenceUnit (if available).
-    -->
+        as well as JSR 250's @PostConstruct, @PreDestroy and @Resource (if available)
+        and JPA's @PersistenceContext and @PersistenceUnit (if available). -->
     <context:annotation-config />
 
-    <!-- Scan the classpath for annotated components that will be auto-registered as Spring beans.
-        By default, Spring-provided stereotypes: @Component, @Repository, @Service, and @Controller will be detected.
-    -->
+    <!-- Scan the classpath for annotated components that will be auto-registered as Spring beans. By default,
+        Spring-provided stereotypes: @Component, @Repository, @Service, and @Controller will be detected. -->
     <context:component-scan base-package="com.city.atm" annotation-config="true" />
 
     <!-- <context:property-placeholder location="classpath:application.properties" />  -->
 
-    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource" 
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"
         p:driverClassName="com.mysql.jdbc.Driver" p:url="jdbc:mysql://localhost:3306/companyrestservice"
         p:username="root" p:password="root">
     </bean>
@@ -72,7 +70,8 @@
     <tx:annotation-driven transaction-manager="transactionManager" />
 
     <!-- Bean post-processor that automatically applies persistence exception translation to any
-         bean marked with Spring's {@code @Repository} annotation -->
+        bean marked with Spring's {@code @Repository} annotation -->
     <bean id="persistenceExceptionTranslationPostProcessor"
         class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
+
 </beans>
