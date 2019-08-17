@@ -156,18 +156,18 @@ public class ATMControllerTest {
      */
     @Test
     public void testControllerInCitySix() throws Exception {
-        this.mockMvc.perform(MockMvcRequestBuilders.get("/listATMsByCity?city=ZOETERMEER")
+        this.mockMvc.perform(MockMvcRequestBuilders.get("/listATMsByCity?city=Zoetermeer")
             .contentType(MediaType.APPLICATION_JSON_UTF8).content("{ }"))
             .andExpect(MockMvcResultMatchers.status().isOk())
             .andExpect(MockMvcResultMatchers.content().contentType(MediaType.APPLICATION_JSON_UTF8));
 
-        ResponseEntity<List<ATM>> response = this.atmController.listATMsByCity("ZOETERMEER");
+        ResponseEntity<List<ATM>> response = this.atmController.listATMsByCity("Zoetermeer");
 
         Assert.assertTrue(response != null && response.hasBody() && !response.getBody().isEmpty());
         
         ATM atm = response.getBody().get(0);
         Assert.assertEquals("ING", atm.getType());
-        Assert.assertEquals("ZOETERMEER", atm.getAddress().getCity());
+        Assert.assertEquals("Zoetermeer", atm.getAddress().getCity());
     }
 
     /**
