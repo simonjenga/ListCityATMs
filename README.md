@@ -10,7 +10,7 @@ The gathered data is then processed by the Web application and returned as a wel
 Building The Project
 ====================
 
-This project compiles with ```JDK >= 1.5``` and uses ```Maven >= 3.1.1``` as the build tool and also to manage the project dependencies.
+This project compiles with ```JDK >= 1.6``` and uses ```Maven >= 3.1.1``` as the build tool and also to manage the project dependencies.
 
 To run Maven build, execute the following from a console/command prompt with the project root directory as the top level directory:
 
