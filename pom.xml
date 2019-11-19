@@ -353,6 +353,15 @@
                         <wtpversion>2.0</wtpversion>
                     </configuration>
                 </plugin>
+                <plugin>
+                    <groupId>com.heroku.sdk</groupId>
+                    <artifactId>heroku-maven-plugin</artifactId>
+                    <version>2.0.10</version>
+                    <configuration>
+                        <appName>calm-forest-59738</appName>
+                        <jdkVersion>${java.version}</jdkVersion>
+                    </configuration>
+                </plugin>
             </plugins>
         </pluginManagement>
     </build>
