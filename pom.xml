@@ -344,6 +344,17 @@
                     <!-- http://mvnrepository.com/artifact/org.eclipse.jetty/jetty-maven-plugin -->
                 </plugin>
                 <plugin>
+                    <groupId>org.apache.tomee.maven</groupId>
+                    <artifactId>tomee-maven-plugin</artifactId>
+                    <version>8.0.0</version>
+                    <configuration>
+                        <!-- Which flavor of TomEE to use? webprofile, plus, plume e.t.c default = webprofile -->
+                        <tomeeClassifier>plume</tomeeClassifier>
+                        <args>-Xmx512m -XX:PermSize=256m</args>
+                    </configuration>
+                    <!-- https://mvnrepository.com/artifact/org.apache.tomee.maven/tomee-maven-plugin -->
+                </plugin>
+                <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-eclipse-plugin</artifactId>
                     <version>2.10</version>
@@ -351,7 +362,7 @@
                         <downloadSources>false</downloadSources>
                         <downloadJavadocs>false</downloadJavadocs>
                         <wtpversion>2.0</wtpversion>
-                    </configuration>
+                    </configuration>			
                 </plugin>
                 <plugin>
                     <groupId>com.heroku.sdk</groupId>
