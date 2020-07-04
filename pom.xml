@@ -362,7 +362,7 @@
                         <downloadSources>false</downloadSources>
                         <downloadJavadocs>false</downloadJavadocs>
                         <wtpversion>2.0</wtpversion>
-                    </configuration>			
+                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>com.heroku.sdk</groupId>
