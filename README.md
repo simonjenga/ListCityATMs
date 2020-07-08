@@ -10,19 +10,29 @@ The gathered data is then processed by the Web application and returned as a wel
 Building The Project
 ====================
 
-This project compiles with ```JDK >= 1.6``` and uses ```Maven >= 3.1.1``` as the build tool and also to manage the project dependencies.
+This project compiles with ```JDK >= 1.7``` and uses ```Maven >= 3.1.1``` as the build tool and also to manage the project dependencies.
 
-To run Maven build, execute the following from a console/command prompt with the project root directory as the top level directory:
+To run a full Maven build, execute the following from a console/command prompt with the project root directory as the top level directory:
 
 ```mvn clean package```
 
-This will create a distributable and deployable WAR file for the web application. This WAR file can be deployed on the latest versions of web servers/containers e.g Jetty, Tomcat, WildFly, JBoss etc.
+To run a Maven build that skips executing Unit Tests, execute the following from a console/command prompt with the project root directory as the top level directory:
 
-This project includes a plug-in in the Maven Build file for deploying into the WildFly 8.2.0.Final Server. In order to build and deploy it to this Server, execute the following command:
+```mvn clean package -DskipTests -Dinvoker.skip=true```
+
+This will create a distributable and deployable WAR file for the web application. This WAR file can be deployed on the latest versions of web servers/containers e.g Jetty, Tomcat, WildFly, TomEE etc.
+
+This project includes some plug-ins it's the Maven Build file for deploying into various commonly used JavaEE Server's.
+
+In order to build and deploy it to the Apache TomEE Server, execute the following command:
+
+```mvn clean package tomee:run -DskipTests -Dinvoker.skip=true```
+
+In order to build and deploy it to the WildFly X.X.X.Final Server, execute the following command:
 
 ```mvn clean package antrun:run -Pdeploy-war -DskipTests -Dinvoker.skip=true```
 
-This project also includes an embedded Tomcat and Jetty Server as a plug-in in the Maven Build file. In order to run this project using either of these plug-ins, execute only one of the following commands:
+In order to build and deploy it to either Tomcat or Jetty Server, execute only one of the following commands:
 
 ```mvn jetty:run-war```
 
