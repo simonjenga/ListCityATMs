@@ -26,7 +26,7 @@
     <!-- <context:property-placeholder location="classpath:application.properties" />  -->
 
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"
-        p:driverClassName="com.mysql.jdbc.Driver" p:url="jdbc:mysql://localhost:3306/companyrestservice"
+        p:driverClassName="com.mysql.jdbc.Driver" p:url="jdbc:mysql://localhost:3306/listcityatms"
         p:username="root" p:password="root">
     </bean>
 
