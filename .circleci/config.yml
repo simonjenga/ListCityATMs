@@ -1,15 +1,21 @@
 version: 2 # use CircleCI 2.0
 jobs: # a collection of steps
   build: # runs not using Workflows must have a `build` job as entry point
-    
+
     working_directory: ~/ListCityATMs # directory where steps will run
 
     docker: # run the steps with Docker
-      - image: circleci/openjdk:8-jdk-stretch # ...with this image as the primary container; this is where all `steps` will run
+      # specify the version you desire here...with this image as the primary container; this is where all `steps` will run
+      - image: circleci/openjdk:8-jdk
+
+    environment:
+      # Configure the JVM and MAVEN to avoid OOM errors
+      JAVA_OPTS: "-Xmx256m -Dfile.encoding=UTF-8"
+      MAVEN_OPTS: "-Xmx256m -Dfile.encoding=UTF-8"
 
     steps: # a collection of executable commands
-
-      - checkout # check out source code to working directory
+      # check out source code to working directory
+      - checkout
 
       - restore_cache: # restore the saved cache after the first run or if `pom.xml` has changed
           # Read about caching dependencies: https://circleci.com/docs/2.0/caching/
@@ -22,7 +28,7 @@ jobs: # a collection of steps
             - ~/.m2
           key: ListCityATMs-{{ checksum "pom.xml" }}
       
-      - run: mvn package # run the actual tests
+      - run: mvn clean package --errors --quiet # run the actual tests
       
       - store_test_results: # uploads the test metadata from the `target/surefire-reports` directory so that it can show up in the CircleCI dashboard. 
       # Upload test results for display in Test Summary: https://circleci.com/docs/2.0/collect-test-data/
